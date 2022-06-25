@@ -1,0 +1,88 @@
+﻿<Window x:Class="HistDemoA.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:hc="https://handyorg.github.io/handycontrol"
+        xmlns:local="clr-namespace:HistDemoA"
+        d:DataContext="{d:DesignInstance Type=local:ViewModel}"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="800">
+    <Grid Margin="10, 10">
+        <Grid.RowDefinitions>
+            <RowDefinition ></RowDefinition>
+            <RowDefinition Height="70"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <!-- 运算前后的图像显示 -->
+        <DockPanel Margin="0,0,0,10">
+            <TextBlock Text="图像预览" 
+                       DockPanel.Dock="Top" 
+                       Style="{StaticResource TextBlockSubTitle}" 
+                       HorizontalAlignment="Left">
+            </TextBlock>
+            <UniformGrid DockPanel.Dock="Top" Height="15" Columns="2">
+                <TextBlock Text="原始图像" HorizontalAlignment="Center" VerticalAlignment="Bottom"></TextBlock>
+                <TextBlock Text="处理后图像" HorizontalAlignment="Center" VerticalAlignment="Bottom"></TextBlock>
+            </UniformGrid>
+            
+            <!-- 分界线 -->
+            <Border Style="{StaticResource BorderHorizontallySplitter}" DockPanel.Dock="Bottom"/>
+            <UniformGrid DockPanel.Dock="Bottom" Columns="2">
+                
+                <!-- 显示原始图像 -->
+                <Border Style="{StaticResource BorderRegion}" Margin="10,10">
+                    <Border>
+                        <!-- 有图的时候显示读取的图片，没有的时候显示新浪微博裂开的图片 -->
+                        <Image Source="{Binding Path = FileFullPath}"></Image>
+                    </Border>
+                </Border>
+
+                <!-- 显示处理后的图像 -->
+                <Border Style="{StaticResource BorderRegion}" Margin="10,10">
+                    <Border>
+                        <Image Source="{Binding Path = AfterFileFullPath}"></Image>
+                    </Border>
+                </Border>
+            </UniformGrid>
+        </DockPanel>
+
+
+        <!-- 功能按钮区域 -->
+        <DockPanel Grid.Row="1" Margin="0,0,0,0">
+            <TextBlock 
+                Text="软件功能" 
+                DockPanel.Dock="Top"
+                HorizontalAlignment="Left"
+                Style="{StaticResource TextBlockSubTitle}">
+            </TextBlock>
+            
+            <UniformGrid Height="50" Rows="1" DockPanel.Dock="Bottom">
+                <Button Content="打开文件" 
+                        Style="{StaticResource ButtonPrimary}" 
+                        Width="100" Height="30" Margin="10, 10" 
+                        IsEnabled="{Binding IsNotRunning}"
+                        Click="Button_Open_Click" ></Button>
+                <Button Content="直方图均衡化" 
+                        Style="{StaticResource ButtonSuccess}" 
+                        IsEnabled="{Binding IsNotRunning}"
+                        Width="100" Height="30" Margin="10, 10" 
+                        Click="Button_Histogram_Equalization_Click"></Button>
+                <Button Content="均值滤波" 
+                        Style="{StaticResource ButtonWarning}" 
+                        Width="100" Height="30" Margin="10, 10" 
+                        IsEnabled="{Binding IsNotRunning}"
+                        Click="Button_Mean_Filtering_Click"></Button>
+                <Button Content="中值滤波" 
+                        Style="{StaticResource ButtonWarning}" 
+                        Width="100" Height="30" Margin="10, 10" 
+                        IsEnabled="{Binding IsNotRunning}"
+                        Click="Button_Median_Filtering_Click"></Button>
+                <Button Content="退出程序" 
+                        Style="{StaticResource ButtonDanger}" 
+                        Width="100" Height="30" Margin="10, 10" 
+                        Click="Button_Quit_Click"></Button>
+            </UniformGrid>
+        </DockPanel>
+    </Grid>
+</Window>

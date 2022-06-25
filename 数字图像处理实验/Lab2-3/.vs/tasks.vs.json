@@ -1,0 +1,10 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "任务-image_invalid",
+      "appliesTo": "Images/image_invalid.bmp",
+      "type": "launch"
+    }
+  ]
+}
