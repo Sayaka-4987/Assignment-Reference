@@ -35,7 +35,7 @@ BJTU 的很多专业课程虽有实践任务，但许多实验安排都存在难
 
 [计算机体系结构实验报告](https://github.com/Sayaka-4987/Assignment-Reference/tree/main/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E5%AE%9E%E9%AA%8C) 
 
-[移动应用开发作业1](https://github.com/Sayaka-4987/Have-to-do-Android)、[作业2](https://github.com/Sayaka-4987/Pedometer)、[组队大作业 coding 仓库链接](https://xlisten.coding.net/public/xlisten/XListen-Android/git/files) 
+[移动应用开发作业1](https://github.com/Sayaka-4987/Have-to-do-Android)、[作业2](https://github.com/Sayaka-4987/Pedometer)、[组队大作业仓库链接](https://github.com/Sayaka-4987/XListen) 
 
 [数字图像处理实验](https://github.com/Sayaka-4987/Assignment-Reference/tree/main/%E6%95%B0%E5%AD%97%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E5%AE%9E%E9%AA%8C) 
 
